@@ -1,0 +1,385 @@
+Release 13.4 - xst O.87xd (lin)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: hsync.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "hsync.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "hsync"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : hsync
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/ubuntu/src/VGAController/hsync.vhd" in Library work.
+Entity <hsync> compiled.
+Entity <hsync> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <hsync> in library <work> (architecture <Behavioral>) with generics.
+	back_porch = 32
+	column_width = 10
+	display_time = 1280
+	front_porch = 96
+	hcount_width = 11
+	pulse_width = 192
+	scan_time = 1600
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <hsync> in library <work> (Architecture <Behavioral>).
+	back_porch = 32
+	column_width = 10
+	display_time = 1280
+	front_porch = 96
+	hcount_width = 11
+	pulse_width = 192
+	scan_time = 1600
+Entity <hsync> analyzed. Unit <hsync> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <hsync>.
+    Related source file is "/home/ubuntu/src/VGAController/hsync.vhd".
+    Found 1-bit register for signal <dataon>.
+    Found 11-bit up counter for signal <hcount>.
+    Found 1-bit register for signal <hsync>.
+    Found 1-bit register for signal <rowclk>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   3 D-type flip-flop(s).
+Unit <hsync> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 11-bit up counter                                     : 1
+# Registers                                            : 3
+ 1-bit register                                        : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 11-bit up counter                                     : 1
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <hsync> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block hsync, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : hsync.ngr
+Top Level Output File Name         : hsync
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 15
+
+Cell Usage :
+# BELS                             : 49
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 10
+#      LUT3                        : 1
+#      LUT3_D                      : 1
+#      LUT3_L                      : 1
+#      LUT4                        : 9
+#      LUT4_L                      : 2
+#      MUXCY                       : 10
+#      MUXF5                       : 1
+#      VCC                         : 1
+#      XORCY                       : 11
+# FlipFlops/Latches                : 14
+#      FDR                         : 12
+#      FDS                         : 1
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 1
+#      OBUF                        : 13
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                       14  out of   4656     0%  
+ Number of Slice Flip Flops:             14  out of   9312     0%  
+ Number of 4 input LUTs:                 25  out of   9312     0%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_i                              | BUFGP                  | 14    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.434ns (Maximum Frequency: 225.545MHz)
+   Minimum input arrival time before clock: 3.909ns
+   Maximum output required time after clock: 4.285ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_i'
+  Clock period: 4.434ns (frequency: 225.545MHz)
+  Total number of paths / destination ports: 227 / 26
+-------------------------------------------------------------------------
+Delay:               4.434ns (Levels of Logic = 2)
+  Source:            hcount_8 (FF)
+  Destination:       hcount_0 (FF)
+  Source Clock:      clk_i rising
+  Destination Clock: clk_i rising
+
+  Data Path: hcount_8 to hcount_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              6   0.514   0.721  hcount_8 (hcount_8)
+     LUT4:I0->O            1   0.612   0.387  hcount_or0000_SW0_SW0 (N6)
+     LUT4:I2->O           11   0.612   0.793  hcount_or0000 (hcount_or0000)
+     FDR:R                     0.795          hcount_0
+    ----------------------------------------
+    Total                      4.434ns (2.533ns logic, 1.901ns route)
+                                       (57.1% logic, 42.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_i'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              3.909ns (Levels of Logic = 2)
+  Source:            rst_i (PAD)
+  Destination:       hcount_0 (FF)
+  Destination Clock: clk_i rising
+
+  Data Path: rst_i to hcount_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.106   0.603  rst_i_IBUF (rst_i_IBUF)
+     LUT4:I0->O           11   0.612   0.793  hcount_or0000 (hcount_or0000)
+     FDR:R                     0.795          hcount_0
+    ----------------------------------------
+    Total                      3.909ns (2.513ns logic, 1.396ns route)
+                                       (64.3% logic, 35.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_i'
+  Total number of paths / destination ports: 13 / 13
+-------------------------------------------------------------------------
+Offset:              4.285ns (Levels of Logic = 1)
+  Source:            hcount_6 (FF)
+  Destination:       column_o<5> (PAD)
+  Source Clock:      clk_i rising
+
+  Data Path: hcount_6 to column_o<5>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              7   0.514   0.602  hcount_6 (hcount_6)
+     OBUF:I->O                 3.169          column_o_5_OBUF (column_o<5>)
+    ----------------------------------------
+    Total                      4.285ns (3.683ns logic, 0.602ns route)
+                                       (86.0% logic, 14.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 4.91 secs
+ 
+--> 
+
+
+Total memory usage is 165776 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

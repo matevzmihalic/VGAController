@@ -1,0 +1,7 @@
+V3 3
+FL /home/ubuntu/src/VGAController/hsync.vhd 2012/03/19.15:12:01 O.87xd
+EN work/hsync 1332166339 FL /home/ubuntu/src/VGAController/hsync.vhd \
+      PB ieee/std_logic_1164 1325952872 PB ieee/std_logic_arith 1325952873 \
+      PB ieee/STD_LOGIC_UNSIGNED 1325952875
+AR work/hsync/Behavioral 1332166340 \
+      FL /home/ubuntu/src/VGAController/hsync.vhd EN work/hsync 1332166339

@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "/home/ubuntu/src/VGAController/hsync.xst" -ofn "/home/ubuntu/src/VGAController/hsync.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 hsync.ngc hsync.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o hsync_map.ncd hsync.ngd hsync.pcf 
+par -w -intstyle ise -ol high -t 1 hsync_map.ncd hsync.ncd hsync.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml hsync.twx hsync.ncd -o hsync.twr hsync.pcf 
